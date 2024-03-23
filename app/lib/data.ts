@@ -11,11 +11,13 @@ import {
 import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
 
+export const dynamic = "force-dynamic";
 export async function fetchRevenue() {
   // Add noStore() here to prevent the response from being cached.
   // This is equivalent to in fetch(..., {cache: 'no-store'}).
   //Note: unstable_noStore is an experimental API and may change in the future.
   // If you prefer to use a stable API in your own projects, you can also use the Segment Config Option export const dynamic = "force-dynamic".
+  // noStore() doesn't seem to work
   noStore();
 
   try {
