@@ -22,6 +22,7 @@ export default async function createInvoice(formData: FormData) {
   // If many fields, can use : const rawFormData = Object.fromEntries(formData.entries())
 
   const amountInCents = amount * 100;
+  const date = new Date().toISOString().split('T')[0];
 
   console.log({customerId, amount, status});
   console.log(typeof amount);
